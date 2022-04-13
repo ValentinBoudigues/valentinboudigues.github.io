@@ -2,10 +2,6 @@ embed.icons {
     border-radius: 90%;
 }
 
-embed.retex {
-  height: 500px;
-}
-
 a:visited, a:hover, a:focus, a {
     text-decoration: none;
     color: black;
