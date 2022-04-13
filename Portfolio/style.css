@@ -1,0 +1,286 @@
+embed.icons {
+    border-radius: 90%;
+}
+
+a:visited, a:hover, a:focus, a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#java,
+#html,
+#processing,
+#sql,
+#VMW {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: start;
+    align-items: center;
+    gap: 25px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 25%;
+    margin: 0;
+    background: #222;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    color: #fff;
+    overflow: hidden;
+}
+
+div#main {
+    display: flex;
+    flex-direction: row;
+}
+
+
+div#projets {
+    margin-left: 2%;
+    width: 50%;
+}
+
+div#moi {
+    width: 50%;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+/* --------------------- Navigation Bar --------------------- */
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    display: absolute;
+    background: #55d6aa;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    padding: 0;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 23px;
+
+    position: relative;
+}
+
+nav a {
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #444;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+/* --------------------- Pop up --------------------- */
+
+div.popup {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /*background: linear-gradient(#E0EAFC, #CFDEF3);*/
+    height: 100vh;
+    color: black;
+    user-select: none;
+}
+
+.center,
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#click_java,
+#click_html,
+#click_processing,
+#click_sql,
+#click_vm {
+    display: none;
+}
+
+.click-me {
+    display: block;
+    width: 160px;
+    height: 50px;
+    background: linear-gradient(to right, #42275a, #734b6d);
+    border: 1px solid black;
+    color: white;
+    text-align: center;
+    font-size: 22;
+    line-height: 50px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.click-me:hover {
+  background: #42275a;
+}
+
+.content {
+    width: 400px;
+    height: 350px;
+    background: white;
+    border-radius: 3px;
+    transition: .3s ease-in;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .4);
+    color: black;
+}
+
+.content li {
+    margin-top: 10%
+}
+
+
+#click_java:checked~.filter_java,
+#click_html:checked~.filter_html,
+#click_processing:checked~.filter_processing,
+#click_sql:checked~.filter_sql,
+#click_vm:checked~.filter_vm {
+    opacity: 1;
+    visibility: visible;
+}
+
+input {
+    visibility: hidden;
+}
+
+.header {
+    height: 68px;
+    background: #55d6aa;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+}
+
+.header h2 {
+    color: white;
+    padding-left: 32px;
+    font-weight: normal;
+}
+
+.fa-times {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #e8f7fc;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fa-check {
+    font-size: 50px;
+    color: #27ae60;
+    font-weight: bold;
+    height: 80px;
+    width: 80px;
+    border: 2px solid #27ae60;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 30px 0 0 160px;
+}
+
+p {
+    padding-top: 10px;
+    font-size: 19px;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.line {
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    height: 1px;
+    background: silver;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 1px solid #27ae60;
+    border-radius: 3px;
+    color: #27ae60;
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: #27ae60;
+    color: white;
+    transition: .5s;
+}
+
+.filter_java,
+.filter_html,
+.filter_processing,
+.filter_sql,
+.filter_vm {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: red;
+    background-color: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(4px);
+    transition-duration: .2s;
+}

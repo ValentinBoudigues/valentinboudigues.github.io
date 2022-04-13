@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="utf-8" lang="fr">
+</head>
+
+<body>
+
+    <!-- Menu -->
+
+    <header>
+        <div class="account_infos">
+
+        </div>
+
+        <h1>Portfolio</h1>
+
+        <div class="navigation bar">
+
+            <!-- Contact Bouton -->
+            <div class="popup">
+                <!-- Trigger/Open The Modal -->
+                <button id="myBtn">Contact</button>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>Mes Contacts</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Adresse mail : <a
+                                    href="mailto::valentin.boudigues@etu.u-bordeaux.fr">Mail</a>
+                            </p>
+                            <p>Numéro Téléphone : +33 1 23 45 67 89</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3> </h3>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById("myModal");
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("myBtn");
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks the button, open the modal 
+                    btn.onclick = function () {
+                        modal.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Body -->
+
+        <div class="VM">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <h3 class="title">Projet VM</h3> <!-- Projet BASH/VM-->
+
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <button class="btn btn-primary" type="button"
+                        onclick="window.location.href='./pages/vm.html'">VM</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="SQL">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <h3 class="title">Projet SQL</h3>
+
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <button class="btn btn-primary" type="button" onclick="window.location.href='./pages/sql.html'">Base
+                        de Données</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+        
+    </div>
+
+
+</body>
+
+</html>
