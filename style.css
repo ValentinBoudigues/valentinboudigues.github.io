@@ -9,6 +9,7 @@ a:visited, a:hover, a:focus, a {
 }
 
 #java,
+#python,
 #html,
 #processing,
 #sql,
@@ -276,6 +277,7 @@ div.popup {
 }
 
 #click_java,
+#click_python,
 #click_html,
 #click_processing,
 #click_sql,
@@ -318,6 +320,7 @@ div.popup {
 
 
 #click_java:checked~.filter_java,
+#click_python:checked~.filter_python,
 #click_html:checked~.filter_html,
 #click_processing:checked~.filter_processing,
 #click_sql:checked~.filter_sql,
@@ -402,6 +405,7 @@ p {
 }
 
 .filter_java,
+.filter_python,
 .filter_html,
 .filter_processing,
 .filter_sql,
