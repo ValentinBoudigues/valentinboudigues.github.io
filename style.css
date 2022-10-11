@@ -13,7 +13,7 @@ a:visited, a:hover, a:focus, a {
 #html,
 #processing,
 #sql,
-#VMW {
+#bash {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
@@ -46,6 +46,10 @@ div#main {
 div#projets {
     margin-left: 2%;
     width: 50%;
+}
+
+div#liste-projet {
+    margin-left: 4%;
 }
 
 div#moi {
@@ -124,8 +128,13 @@ div#moi {
 
 .modal-body {
     text-align: left;
-    color: #000;
+    color: #fff;
     padding: 2px 16px;
+    background-color: #222;
+}
+
+.modal-body p {
+    color: #fff;
 }
 
 .modal-footer {
@@ -281,7 +290,7 @@ div.popup {
 #click_html,
 #click_processing,
 #click_sql,
-#click_vm {
+#click_bash {
     display: none;
 }
 
@@ -324,7 +333,7 @@ div.popup {
 #click_html:checked~.filter_html,
 #click_processing:checked~.filter_processing,
 #click_sql:checked~.filter_sql,
-#click_vm:checked~.filter_vm {
+#click_bash:checked~.filter_bash {
     opacity: 1;
     visibility: visible;
 }
@@ -409,7 +418,7 @@ p {
 .filter_html,
 .filter_processing,
 .filter_sql,
-.filter_vm {
+.filter_bash {
     opacity: 0;
     visibility: hidden;
     position: absolute;

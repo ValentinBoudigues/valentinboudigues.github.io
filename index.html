@@ -1,91 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <title>Portfolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style.css" rel="stylesheet">
-        <meta charset="utf-8" lang="fr">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    </head>
+<head>
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8" lang="fr">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
 
-    <body>
+<body>
 
-        <header>
-            <div class="container">
-                <h1 class="logo">Boudigues Valentin</h1>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a style="color: #fff" href="./index.html">Boudigues Valentin</a></h1>
 
-                <nav>
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#"><!-- Contact Bouton -->
-                        <div class="bar">
-                            <!-- Trigger/Open The Modal -->
-                            <a id="myBtn">Contact</a>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">
+                            <!-- Contact Bouton -->
+                            <div class="bar">
+                                <!-- Trigger/Open The Modal -->
+                                <a id="myBtn">Contact</a>
 
-                            <!-- The Modal -->
-                            <div id="myModal" class="modal">
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <span class="close">&times;</span>
-                                        <h2>Mes Contacts</h2>
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <span class="close">&times;</span>
+                                            <h2>Mes Contacts</h2>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Adresse mail : <a style="color: rgba(255, 255, 255, 0.582)"
+                                                    href="mailto::valentin.boudigues@etu.u-bordeaux.fr">valentin.boudigues@etu.u-bordeaux.fr</a>
+                                            </p>
+                                            <p>Numéro Téléphone : +33 1 23 45 67 89</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h3> </h3>
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                        <p>Adresse mail : <a
-                                                href="mailto::valentin.boudigues@etu.u-bordeaux.fr">Mail</a>
-                                        </p>
-                                        <p>Numéro Téléphone : +33 1 23 45 67 89</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <h3> </h3>
-                                    </div>
+
                                 </div>
 
-                            </div>
+                                <script>
+                                    // Get the modal
+                                    var modal = document.getElementById("myModal");
 
-                            <script>
-                                // Get the modal
-                                var modal = document.getElementById("myModal");
+                                    // Get the button that opens the modal
+                                    var btn = document.getElementById("myBtn");
 
-                                // Get the button that opens the modal
-                                var btn = document.getElementById("myBtn");
+                                    // Get the <span> element that closes the modal
+                                    var span = document.getElementsByClassName("close")[0];
 
-                                // Get the <span> element that closes the modal
-                                var span = document.getElementsByClassName("close")[0];
+                                    // When the user clicks the button, open the modal
+                                    btn.onclick = function () {
+                                        modal.style.display = "block";
+                                    }
 
-                                // When the user clicks the button, open the modal
-                                btn.onclick = function () {
-                                    modal.style.display = "block";
-                                }
-
-                                // When the user clicks on <span> (x), close the modal
-                                span.onclick = function () {
-                                    modal.style.display = "none";
-                                }
-
-                                // When the user clicks anywhere outside of the modal, close it
-                                window.onclick = function (event) {
-                                    if (event.target == modal) {
+                                    // When the user clicks on <span> (x), close the modal
+                                    span.onclick = function () {
                                         modal.style.display = "none";
                                     }
-                                }
-                            </script>
-                        </div></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
 
-        <div id="main">
+                                    // When the user clicks anywhere outside of the modal, close it
+                                    window.onclick = function (event) {
+                                        if (event.target == modal) {
+                                            modal.style.display = "none";
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            <div id="projets">
+    <div id="main">
 
-                <h1>Mes différents projets</h1>
+        <div id="projets">
+
+            <h1>Mes différents projets</h1>
+
+            <div id="liste-projet">
 
                 <a id="python" href="#">
-                  <embed class="icons" src="./img/python.png" width="75px" height="75px">
+                    <embed class="icons" src="./img/python.png" width="75px" height="75px">
                     <label for="click_python" class="click-me">Python</label>
                 </a>
 
@@ -119,13 +124,15 @@
 
                 <br>
 
-                <a id="VMW" href="#">
-                    <embed class="icons" src="./img/VMW.png" width="75px" height="75px">
-                    <label for="click_vm" class="click-me">VM</label>
+                <a id="bash" href="#">
+                    <embed class="icons" src="./img/bash.png" width="75px" height="75px">
+                    <label for="click_bash" class="click-me">Bash</label>
                 </a>
 
+            </div>
 
-                <!-- Python Pop-up -->
+            <!-- Python Pop-up -->
+            <div id="python">
                 <input type="checkbox" id="click_python">
                 <div class="filter_python">
                     <div class="center">
@@ -138,14 +145,19 @@
                                 <a href="./pages/IA_SSL.html">
                                     <li>IA Soccer</li>
                                 </a>
+                                <a href="./pages/rechauffement_climatique.html">
+                                    <li>Étude sur le réchauffement climatique</li>
+                                </a>
                             </ul>
                             <div class="line"></div>
                             <label for="click_python" class="close-btn">Close</label>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Java Pop-up -->
+            <!-- Java Pop-up -->
+            <div id="java">
                 <input type="checkbox" id="click_java">
                 <div class="filter_java">
                     <div class="center">
@@ -158,14 +170,19 @@
                                 <a href="./pages/lowatem.html">
                                     <li>Lowatem</li>
                                 </a>
+                                <a href="./pages/projet_reprise.html">
+                                    <li>Bob the hero</li>
+                                </a>
                             </ul>
                             <div class="line"></div>
                             <label for="click_java" class="close-btn">Close</label>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- HTML Pop-up -->
+            <!-- HTML Pop-up -->
+            <div id="html">
                 <input type="checkbox" id="click_html">
                 <div class="filter_html">
                     <div class="center">
@@ -175,9 +192,9 @@
                                 <label for="click_html" class="fas fa-times"></label>
                             </div>
                             <ul>
-                              <a href="./pages/besoin_client.html">
-                                <li>Besoin Client</li>
-                              </a>
+                                <a href="./pages/besoin_client.html">
+                                    <li>Besoin Client</li>
+                                </a>
                             </ul>
 
                             <div class="line"></div>
@@ -185,8 +202,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Processing Pop-up -->
+            <!-- Processing Pop-up -->
+            <div id="processing">
                 <input type="checkbox" id="click_processing">
                 <div class="filter_processing">
                     <div class="center">
@@ -196,12 +215,12 @@
                                 <label for="click_processing" class="fas fa-times"></label>
                             </div>
                             <ul>
-                              <a href="./pages/pong.html">
-                                <li>Pong</li>
-                              </a>
-                              <a href="./pages/jpo.html">
-                                <li>Dino Chromium</li>
-                              </a>
+                                <a href="./pages/pong.html">
+                                    <li>Pong</li>
+                                </a>
+                                <a href="./pages/jpo.html">
+                                    <li>Dino Chromium</li>
+                                </a>
                             </ul>
 
                             <div class="line"></div>
@@ -209,8 +228,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- SQL Pop-up -->
+            <!-- SQL Pop-up -->
+            <div id="sql">
                 <input type="checkbox" id="click_sql">
                 <div class="filter_sql">
                     <div class="center">
@@ -219,56 +240,62 @@
                                 <h2>Projet SQL</h2>
                                 <label for="click_sql" class="fas fa-times"></label>
                             </div>
-                              <ul>
-                                <a href="#">
-                                  <li>Base de Données</li>
+                            <ul>
+                                <a href="./pages/donnees_viticole.html">
+                                    <li>Données viticoles</li>
                                 </a>
-                              </ul>
+                            </ul>
                             <div class="line"></div>
                             <label for="click_sql" class="close-btn">Close</label>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- VM Pop-up -->
-                <input type="checkbox" id="click_vm">
-                <div class="filter_vm">
+            <!-- bash Pop-up -->
+            <div id="bash">
+                <input type="checkbox" id="click_bash">
+                <div class="filter_bash">
                     <div class="center">
                         <div class="content">
                             <div class="header">
-                                <h2>Projet Machine Virtuelle</h2>
-                                <label for="click_vm" class="fas fa-times"></label>
+                                <h2>Projet Bash</h2>
+                                <label for="click_bash" class="fas fa-times"></label>
                             </div>
                             <ul>
-                              <a href="./pages/vm.html">
-                                <li>Création d'une machine virtuelle</li>
-                              </a>
+                                <a href="./pages/bash.html">
+                                    <li>Création d'une machine virtuelle</li>
+                                </a>
+                                <a href="./pages/alias-bye-project.html">
+                                    <li>Bye-project</li>
+                                </a>
                             </ul>
 
                             <div class="line"></div>
-                            <label for="click_vm" class="close-btn">Close</label>
+                            <label for="click_bash" class="close-btn">Close</label>
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <div id="moi">
-                <div style="width:100%;height:100px;border:1px solid #000;">
-                    <embed class="icons" src="./img/avatar.png" width="50px" height="50px">
-                    /!\ Placeholder /!\
+        </div>
+
+        <div id="moi">
+            <div style="width:100%;height:100px;border:1px solid #000;">
+                <embed class="icons" src="./img/avatar.png" width="50px" height="50px">
+                /!\ Placeholder /!\
 
 
 
 
 
-
-                </div>
 
             </div>
 
         </div>
 
-    </body>
+    </div>
+
+</body>
 
 </html>
