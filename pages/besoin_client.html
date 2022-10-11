@@ -1,25 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../style.css">
     <title>Analyse d'un besoin client</title>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <header>
         <div class="container">
-            <h1 class="logo">Boudigues Valentin</h1>
+            <h1 class="logo"><a style="color: #fff" href="../index.html">Boudigues Valentin</a></h1>
 
             <nav>
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">
+                            <!-- Contact Bouton -->
+                            <div class="bar">
+                                <!-- Trigger/Open The Modal -->
+                                <a id="myBtn">Contact</a>
+
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <span class="close">&times;</span>
+                                            <h2>Mes Contacts</h2>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Adresse mail : <a style="color: rgba(255, 255, 255, 0.582)"
+                                                    href="mailto::valentin.boudigues@etu.u-bordeaux.fr">valentin.boudigues@etu.u-bordeaux.fr</a>
+                                            </p>
+                                            <p>Numéro Téléphone : +33 1 23 45 67 89</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h3> </h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <script>
+                                    // Get the modal
+                                    var modal = document.getElementById("myModal");
+
+                                    // Get the button that opens the modal
+                                    var btn = document.getElementById("myBtn");
+
+                                    // Get the <span> element that closes the modal
+                                    var span = document.getElementsByClassName("close")[0];
+
+                                    // When the user clicks the button, open the modal
+                                    btn.onclick = function () {
+                                        modal.style.display = "block";
+                                    }
+
+                                    // When the user clicks on <span> (x), close the modal
+                                    span.onclick = function () {
+                                        modal.style.display = "none";
+                                    }
+
+                                    // When the user clicks anywhere outside of the modal, close it
+                                    window.onclick = function (event) {
+                                        if (event.target == modal) {
+                                            modal.style.display = "none";
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-  </body>
+</body>
+
 </html>
