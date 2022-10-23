@@ -81,15 +81,15 @@ div#skills {
 
 
 div#description  p {
-    color: gray;
+    color: rgb(187, 191, 188);
 }
 
 div#contenu p{
-    color: gray;
+    color: rgb(187, 191, 188);
 }
 
 div#skills p, div#skills li {
-    color: gray;
+    color: rgb(187, 191, 188);
     text-align: center;
 }
 
