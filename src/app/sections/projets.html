@@ -1,0 +1,39 @@
+<section id="projets" class="section" aria-labelledby="projets-title">
+  <div class="wrap">
+    <div class="head">
+      <app-section-heading section="projets" />
+
+      <div class="filter" role="group" aria-label="Filtrer les projets" appReveal>
+        @for (f of filters; track f) {
+          <button type="button" [attr.aria-pressed]="filter() === f" (click)="select(f)">{{ f }}</button>
+        }
+      </div>
+    </div>
+
+    <ul class="grid" appReveal [revealStagger]="0.08">
+      @for (p of visible(); track p.slug) {
+        <li>
+          <a class="card" [routerLink]="['/projets', p.slug]" appGlow>
+            <div class="top">
+              <span class="num">{{ p.num }}</span>
+              <span class="cat">{{ p.category }} · {{ p.year }}</span>
+            </div>
+            <h3>{{ p.title }}</h3>
+            @if (p.note) {
+              <p class="note">{{ p.note }}</p>
+            }
+            <p class="summary">{{ p.summary }}</p>
+            <div class="bottom">
+              <ul class="tags" aria-label="Technologies">
+                @for (t of p.tags; track t) {
+                  <li class="tag">{{ t }}</li>
+                }
+              </ul>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
