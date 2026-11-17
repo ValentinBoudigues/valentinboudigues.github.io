@@ -15,6 +15,8 @@ export const profile = {
   email: 'vboudigues@free.fr',
   github: 'https://github.com/ValentinBoudigues',
   linkedin: 'https://www.linkedin.com/in/valentin-boudigues',
+  /** Fichier dans public/ ; mettre à undefined pour masquer le bouton. */
+  cv: { file: 'cv.pdf', downloadName: 'CV-Valentin-Boudigues.pdf' } as { file: string; downloadName: string } | undefined,
 };
 
 export const stats = [
