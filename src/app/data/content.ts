@@ -15,6 +15,8 @@ export const profile = {
   email: 'vboudigues@free.fr',
   github: 'https://github.com/ValentinBoudigues',
   linkedin: 'https://www.linkedin.com/in/valentin-boudigues',
+  /** Fichier dans public/ ; mettre à undefined pour masquer le bouton. */
+  cv: { file: 'cv.pdf', downloadName: 'CV-Valentin-Boudigues.pdf' } as { file: string; downloadName: string } | undefined,
 };
 
 export const stats = [
@@ -87,7 +89,9 @@ export const timeline: TimelineItem[] = [
     title: 'Stage de recherche',
     org: 'Université de Tsukuba · Japon',
     kind: 'international',
-    text: 'Vision par ordinateur appliquée à la détection humaine (human sensing), dans un laboratoire japonais.',
+    text:
+      'Vision par ordinateur dans un laboratoire japonais : étude des algorithmes de détection ' +
+      "et de reconnaissance de la langue des signes, puis construction d'un prototype.",
     tags: ['Python', 'Computer vision'],
   },
   {
