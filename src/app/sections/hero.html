@@ -1,0 +1,76 @@
+<section id="top" class="hero">
+  <div class="wrap hero-grid">
+    <div class="intro">
+      @if (profile.available) {
+        <p class="badge fade-in">
+          <span class="pulse" aria-hidden="true"></span>
+          {{ profile.availability }} · {{ profile.location }}
+        </p>
+      }
+
+      <h1 [attr.aria-label]="profile.name">
+        <span class="line" aria-hidden="true">
+          @for (l of firstName; track $index) {
+            <span class="letter">{{ l }}</span>
+          }
+        </span>
+        <span class="line outline" aria-hidden="true">
+          @for (l of lastName; track $index) {
+            <span class="letter">{{ l }}</span>
+          }
+        </span>
+      </h1>
+
+      <p class="role fade-in">
+        {{ profile.role }} <span class="slash" aria-hidden="true">/</span>
+        <span class="stack">{{ profile.stack }}</span>
+      </p>
+
+      <p class="pitch fade-in">{{ profile.pitch }}</p>
+
+      <div class="ctas fade-in">
+        <a class="btn primary" routerLink="/" fragment="projets">
+          Voir mes projets <span aria-hidden="true">→</span>
+        </a>
+        <a class="btn" routerLink="/" fragment="contact">Me contacter</a>
+      </div>
+    </div>
+
+    <div class="orbit" aria-hidden="true">
+      <svg class="rings" viewBox="0 0 400 400">
+        <defs>
+          <radialGradient id="core-glow">
+            <stop offset="0%" stop-color="#7cf5c4" stop-opacity="0.45" />
+            <stop offset="100%" stop-color="#7cf5c4" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <circle cx="200" cy="200" r="190" class="ring" />
+        <circle cx="200" cy="200" r="130" class="ring dashed" />
+        <circle cx="200" cy="200" r="70" class="ring" />
+        <circle cx="200" cy="200" r="70" fill="url(#core-glow)" />
+        <circle cx="200" cy="200" r="26" class="core" />
+      </svg>
+
+      @for (p of planets; track p.label) {
+        <div
+          class="planet"
+          [style.width]="p.size"
+          [style.height]="p.size"
+          [style.--start]="p.start"
+          [style.--duration.s]="p.duration"
+        >
+          <span class="pill" [style.color]="p.color">{{ p.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <dl class="wrap stats">
+    @for (s of stats; track s.value) {
+      <div class="stat fade-in">
+        <dt>{{ s.value }}</dt>
+        <dd>{{ s.label }}</dd>
+      </div>
+    }
+  </dl>
+</section>

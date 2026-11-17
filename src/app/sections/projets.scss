@@ -1,0 +1,141 @@
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+
+  button {
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 999px;
+    background: none;
+    color: var(--muted);
+    font-size: 0.85rem;
+    transition:
+      background-color 0.25s,
+      color 0.25s;
+
+    &:hover {
+      color: var(--text);
+    }
+
+    &[aria-pressed='true'] {
+      background: var(--text);
+      color: var(--bg);
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+  gap: 1rem;
+
+  > li {
+    display: flex;
+  }
+}
+
+.card {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 1.6rem;
+
+  // Sur une seule colonne, la hauteur fixe ne laisserait que du vide dans les cartes courtes.
+  @media (min-width: 721px) {
+    min-height: 300px;
+  }
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  transition:
+    transform 0.35s var(--ease-out),
+    border-color 0.35s;
+
+  // Halo menthe qui suit la souris (--mx / --my posés par appGlow).
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(22rem circle at var(--mx) var(--my), rgba(124, 245, 196, 0.1), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(124, 245, 196, 0.35);
+
+    &::before {
+      opacity: 1;
+    }
+
+    .arrow {
+      color: var(--accent);
+      transform: translate(2px, -2px);
+    }
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    letter-spacing: -0.03em;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.num {
+  color: var(--accent);
+}
+
+.cat {
+  color: var(--dim);
+}
+
+.summary {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.arrow {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  color: var(--dim);
+  transition:
+    color 0.3s,
+    transform 0.3s var(--ease-out);
+}

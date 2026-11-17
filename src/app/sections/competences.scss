@@ -1,0 +1,108 @@
+.groups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.group {
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+
+  h3 {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  li {
+    padding: 0.65rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.95rem;
+    color: var(--muted);
+    transition:
+      color 0.25s,
+      transform 0.3s var(--ease-out);
+
+    &:hover {
+      color: var(--text);
+      transform: translateX(4px);
+    }
+  }
+}
+
+.num {
+  margin-right: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+// ---------- Bandeau défilant ----------
+
+.marquee {
+  margin-top: 6rem;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+
+// Deux copies identiques : décaler de -50 % ramène exactement au point de départ.
+.marquee-set {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.word,
+.star {
+  padding-inline: 1.4rem;
+  white-space: nowrap;
+}
+
+.word {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+
+  &.outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--muted);
+  }
+}
+
+.star {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .groups {
+    grid-template-columns: 1fr;
+  }
+}

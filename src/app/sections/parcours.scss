@@ -1,0 +1,148 @@
+// Colonne méta (10rem) | rail (2.5rem, porte la ligne et les points) | carte.
+$meta: 10rem;
+$rail: 2.5rem;
+
+.timeline {
+  position: relative;
+  margin-top: 4.5rem;
+}
+
+.track {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0;
+  left: calc(#{$meta} + #{$rail} / 2);
+  width: 1px;
+  background: var(--line);
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-2));
+  transform-origin: top;
+}
+
+.entry {
+  --kind: var(--accent);
+  position: relative;
+  display: grid;
+  grid-template-columns: $meta $rail 1fr;
+  align-items: start;
+
+  & + & {
+    margin-top: 3.5rem;
+  }
+
+  &[data-kind='formation'] {
+    --kind: var(--accent-2);
+  }
+  &[data-kind='international'] {
+    --kind: var(--warn);
+  }
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  padding-top: 0.35rem;
+  font-family: var(--font-mono);
+  text-align: right;
+}
+
+.period {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.kind {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--kind);
+}
+
+.dot {
+  justify-self: center;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.55rem;
+  border: 2px solid var(--kind);
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--kind) 14%, transparent);
+}
+
+.card {
+  max-width: 42rem;
+
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+}
+
+.org {
+  margin: 0.35rem 0 1rem;
+  font-size: 0.92rem;
+  color: var(--kind);
+}
+
+.text {
+  color: var(--muted);
+}
+
+.bullets {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+
+  li {
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    font-size: 0.93rem;
+    color: var(--muted);
+  }
+}
+
+.tags {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 720px) {
+  $rail-sm: 1.75rem;
+
+  .track {
+    left: calc(#{$rail-sm} / 2);
+  }
+
+  .entry {
+    grid-template-columns: $rail-sm 1fr;
+    grid-template-areas:
+      'dot meta'
+      '. card';
+    row-gap: 0.6rem;
+  }
+
+  .dot {
+    grid-area: dot;
+    margin-top: 0.3rem;
+  }
+
+  .meta {
+    grid-area: meta;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding-top: 0.2rem;
+    text-align: left;
+  }
+
+  .card {
+    grid-area: card;
+  }
+}

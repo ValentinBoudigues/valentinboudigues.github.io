@@ -1,0 +1,39 @@
+@if (project(); as p) {
+  <article class="wrap page">
+    <a class="back" routerLink="/" fragment="projets">← Tous les projets</a>
+
+    <header class="header" appReveal [revealStagger]="0.08">
+      <p class="kicker">{{ p.category }} · {{ p.year }}</p>
+      <h1>{{ p.title }}</h1>
+      <p class="summary">{{ p.summary }}</p>
+      @if (p.note) {
+        <p class="note">{{ p.note }}</p>
+      }
+      <ul class="tags" aria-label="Technologies">
+        @for (t of p.tags; track t) {
+          <li class="tag">{{ t }}</li>
+        }
+      </ul>
+    </header>
+
+    <div class="body">
+      @for (s of p.sections; track s.title) {
+        <section appReveal>
+          <h2>{{ s.title }}</h2>
+          <p>{{ s.text }}</p>
+        </section>
+      }
+
+      @if (p.repo) {
+        <a class="btn primary" [href]="p.repo" target="_blank" rel="noopener">
+          Voir le code sur GitHub <span aria-hidden="true">↗</span>
+        </a>
+      }
+    </div>
+
+    <a class="next" [routerLink]="['/projets', next().slug]">
+      <span class="next-label">Projet suivant</span>
+      <span class="next-title">{{ next().title }} <span aria-hidden="true">→</span></span>
+    </a>
+  </article>
+}
