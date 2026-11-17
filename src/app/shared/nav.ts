@@ -1,18 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { sections, SectionId } from '../data/content';
-
-interface NavLink {
-  id: SectionId;
-  num: string;
-  label: string;
-}
-
-const links: NavLink[] = (Object.keys(sections) as SectionId[]).map((id, i) => ({
-  id,
-  num: String(i + 1).padStart(2, '0'),
-  label: sections[id].label,
-}));
+import { sectionList } from './sections';
 
 @Component({
   selector: 'app-nav',
@@ -58,7 +46,7 @@ const links: NavLink[] = (Object.keys(sections) as SectionId[]).map((id, i) => (
   styleUrl: './nav.scss',
 })
 export class Nav {
-  protected readonly links = links;
+  protected readonly links = sectionList;
   protected readonly scrolled = signal(false);
   protected readonly open = signal(false);
 
