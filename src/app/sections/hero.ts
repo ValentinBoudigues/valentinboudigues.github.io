@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { profile, stats } from '../data/content';
+import { CvButton } from '../shared/cv-button';
 import { gsap, prefersReducedMotion } from '../shared/gsap';
 
 /** Pastilles qui tournent autour du noyau : rayon en px dans le repère 400×400 du SVG, durée d'un tour en s. */
@@ -19,7 +20,7 @@ const planets = [
 
 @Component({
   selector: 'app-hero',
-  imports: [RouterLink],
+  imports: [RouterLink, CvButton],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
