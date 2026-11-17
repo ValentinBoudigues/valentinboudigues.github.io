@@ -33,11 +33,7 @@
           Voir mes projets <span aria-hidden="true">→</span>
         </a>
         <a class="btn" routerLink="/" fragment="contact">Me contacter</a>
-        @if (profile.cv; as cv) {
-          <a class="btn" [href]="cv.file" [attr.download]="cv.downloadName">
-            Télécharger mon CV <span aria-hidden="true">↓</span>
-          </a>
-        }
+        <app-cv-button />
       </div>
     </div>
 

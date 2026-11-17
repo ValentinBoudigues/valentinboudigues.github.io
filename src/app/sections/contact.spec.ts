@@ -42,6 +42,13 @@ describe('Contact', () => {
     expect(button.textContent?.trim()).toBe('Copier l’adresse');
   });
 
+  it('propose le CV en téléchargement', async () => {
+    const { fixture } = await render(() => Promise.resolve());
+    const link = (fixture.nativeElement as HTMLElement).querySelector<HTMLAnchorElement>('a[download]');
+    expect(link?.getAttribute('href')).toBe(profile.cv?.file);
+    expect(link?.getAttribute('download')).toBe(profile.cv?.downloadName);
+  });
+
   it('n’affiche aucun numéro de téléphone', async () => {
     const { fixture } = await render(() => Promise.resolve());
     const text = (fixture.nativeElement as HTMLElement).textContent ?? '';

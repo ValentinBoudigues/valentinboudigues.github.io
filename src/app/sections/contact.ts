@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
 import { contact, profile } from '../data/content';
+import { CvButton } from '../shared/cv-button';
 import { RevealDirective } from '../shared/reveal.directive';
 import { sectionInfo } from '../shared/sections';
 
@@ -7,7 +8,7 @@ const COPIED_MS = 2000;
 
 @Component({
   selector: 'app-contact',
-  imports: [RevealDirective],
+  imports: [RevealDirective, CvButton],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section id="contact" class="section" aria-labelledby="contact-title">
@@ -28,6 +29,7 @@ const COPIED_MS = 2000;
             <button class="btn" type="button" (click)="copy()">
               {{ copied() ? 'Copié ✓' : 'Copier l’adresse' }}
             </button>
+            <app-cv-button />
             <span class="sr-only" aria-live="polite">{{ copied() ? 'Adresse copiée' : '' }}</span>
           </div>
 
