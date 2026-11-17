@@ -1,0 +1,141 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: var(--nav-h);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+
+  &.scrolled {
+    background: rgba(6, 7, 12, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom-color: var(--line);
+  }
+}
+
+.bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+
+  .dot {
+    color: var(--accent);
+  }
+}
+
+.menu ul {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.menu a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--text);
+  }
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+.burger {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .burger {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-right: -0.6rem;
+    border: 0;
+    background: none;
+  }
+
+  .burger-line {
+    position: absolute;
+    width: 1.4rem;
+    height: 1.5px;
+    background: var(--text);
+    transition: transform 0.35s var(--ease-out);
+
+    &:nth-of-type(2) {
+      transform: translateY(-4px);
+    }
+    &:nth-of-type(3) {
+      transform: translateY(4px);
+    }
+  }
+
+  .open .burger-line {
+    &:nth-of-type(2) {
+      transform: rotate(45deg);
+    }
+    &:nth-of-type(3) {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .menu {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    background: rgba(6, 7, 12, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition:
+      transform 0.5s var(--ease-out),
+      visibility 0s 0.5s;
+
+    ul {
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    a {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .num {
+      font-size: 0.85rem;
+    }
+  }
+
+  .open .menu {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.5s var(--ease-out);
+  }
+}
