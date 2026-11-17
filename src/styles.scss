@@ -9,7 +9,8 @@
   --line: rgba(255, 255, 255, 0.09);
   --text: #eceef6;
   --muted: #9097ad;
-  --dim: #5d6378;
+  // #5d6378 dans le brief : éclairci pour atteindre le contraste AA (≈ 4,7:1 sur --bg).
+  --dim: #737a90;
   --accent: #7cf5c4;
   --accent-2: #9d8cff;
   --warn: #ffc36b;

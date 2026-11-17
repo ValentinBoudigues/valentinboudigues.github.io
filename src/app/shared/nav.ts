@@ -13,8 +13,8 @@ import { sectionList } from './sections';
   template: `
     <header class="nav" [class.scrolled]="scrolled()" [class.open]="open()">
       <div class="wrap bar">
-        <a class="logo" routerLink="/" fragment="top" (click)="close()" aria-label="Valentin Boudigues, retour en haut">
-          VB<span class="dot" aria-hidden="true">.</span>
+        <a class="logo" routerLink="/" fragment="top" (click)="close()">
+          VB<span class="dot">.</span><span class="sr-only"> — Valentin Boudigues, retour en haut</span>
         </a>
 
         <button
